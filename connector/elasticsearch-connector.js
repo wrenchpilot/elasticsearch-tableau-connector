@@ -94,7 +94,7 @@ var elasticsearchConnector = (function () {
         //    return abort("Must provide valid Type");
         //}
 
-        $.ajax(connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex +  '/_mapping', {
+        $.ajax(connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex +  '/_mapping' + '/' + connectionData.elasticsearchType, {
                 context: connectionData,
                 dataType: 'json',
                 beforeSend: function (xhr) {
