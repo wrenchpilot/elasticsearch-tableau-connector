@@ -95,7 +95,7 @@ var elasticsearchConnector = (function () {
         }
 
         $.ajax(connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex + '/' +
-            connectionData.elasticsearchType + '/_mapping', {
+            connectionData.elasticsearchType + '/_mapping?include_type_name=true', {
                 context: connectionData,
                 dataType: 'json',
                 beforeSend: function (xhr) {
