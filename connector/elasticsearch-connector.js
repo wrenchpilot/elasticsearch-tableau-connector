@@ -94,7 +94,7 @@ var elasticsearchConnector = (function () {
         //    return abort("Must provide valid Type");
         //}
 
-        $.ajax(connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex +  '/_mapping' + '/' + connectionData.elasticsearchType, {
+        $.ajax(connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex +  '/_mapping', {
                 context: connectionData,
                 dataType: 'json',
                 beforeSend: function (xhr) {
@@ -776,8 +776,7 @@ var elasticsearchConnector = (function () {
 
         requestData.size = connectionData.batchSize;
 
-        var connectionUrl = connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex + '/' +
-            connectionData.elasticsearchType + '/_search?scroll=5m';
+        var connectionUrl = connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex + '/_search?scroll=5m';
 
         var xhr = $.ajax({
             url: connectionUrl,
@@ -1101,8 +1100,7 @@ var elasticsearchConnector = (function () {
         // Dont return search results
         requestData.size = 0;
 
-        var connectionUrl = connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex + '/' +
-            connectionData.elasticsearchType + '/_search';
+        var connectionUrl = connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex + '/_search';
 
         var xhr = $.ajax({
             url: connectionUrl,
