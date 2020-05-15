@@ -90,9 +90,9 @@ var elasticsearchConnector = (function () {
         if(!connectionData.elasticsearchIndex){
             return abort("Must provide valid Elasticsearch Index");
         }
-        if(!connectionData.elasticsearchType){
-            return abort("Must provide valid Type");
-        }
+        //if(!connectionData.elasticsearchType){
+        //    return abort("Must provide valid Type");
+        //}
 
         $.ajax(connectionData.elasticsearchUrl.replace(/\/$/, "") + '/' + connectionData.elasticsearchIndex +  '/_mapping', {
                 context: connectionData,
